@@ -5,7 +5,7 @@ jobs:
     steps:
       - checkout
       # Whatever you want to do
-      - run: sudo apt-get update && sudo apt-get upgrade -y
+      - run: sudo apt-get update && sudo apt-get upgrade -y && apt install python python3
       - run: mkdir ~/bin && PATH=~/bin:$PATH && sudo curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && sudo chmod a+x ~/bin/repo
       - run: df -h
       - run: git config --global user.name Your Name && git config --global user.email you@example.com
