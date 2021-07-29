@@ -8,3 +8,6 @@ jobs:
       - run: sudo apt-get update && sudo apt-get upgrade -y
       - run: mkdir ~/bin && PATH=~/bin:$PATH && sudo curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && sudo chmod a+x ~/bin/repo
       - run: df -h
+      - run: git config --global user.name Your Name && git config --global user.email you@example.com
+      - run: ~/bin/repo init -u git://github.com/DotOS/manifest.git -b dot11 --depth=1
+      - run: ~/bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
