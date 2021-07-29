@@ -9,3 +9,4 @@ jobs:
       - run: mkdir ~/bin && PATH=~/bin:$PATH && sudo curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && sudo chmod a+x ~/bin/repo
       - name: setup tmux
       - uses: mxschmitt/action-tmate@v3
+      
