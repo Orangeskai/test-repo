@@ -1,0 +1,9 @@
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2021.07
+    steps:
+      - checkout
+      # Whatever you want to do
+      - run: sudo apt-get update && sudo apt-get upgrade -y
+      - run: sudo mkdir ~/bin && sudo PATH=~/bin:$PATH && sudo curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
