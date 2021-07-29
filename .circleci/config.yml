@@ -6,5 +6,5 @@ jobs:
       - checkout
       # Whatever you want to do
       - run: sudo apt-get update && sudo apt-get upgrade -y
-      - run: sudo mkdir ~/bin && sudo PATH=~/bin:$PATH && sudo curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+      - run: mkdir ~/bin && PATH=~/bin:$PATH && sudo curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && sudo chmod a+x ~/bin/repo
       - run: sudo apt-get install tmate -y && sudo tmate
