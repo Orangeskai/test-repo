@@ -10,6 +10,14 @@ jobs:
       - run: PATH=~/bin:$PATH && sudo curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && sudo chmod a+x ~/bin/repo
       - run: df -h
       - run: git config --global user.name Your Name && git config --global user.email you@example.com
-      - run: ~/bin/repo init -u git://github.com/DotOS/manifest.git -b dot11 --depth=1
+      - run: mkdir WORKSPACE & cd WORKSPACE
+      - run: ~/bin/repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b eleven
       - run: ~/bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+      - run: sudo apt install -y ccache 
+      - run: sudo /usr/sbin/update-ccache-symlinks
+      - run: echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
+      - run: source ~/.bashrc && echo $PATH
+      - run: . build/envsetup.sh
+      - run: lunch aosp_RMX2001-userdebug
+      - run: mka bacon -j2
       - run: free
