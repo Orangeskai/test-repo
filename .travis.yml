@@ -1,3 +1,8 @@
 language: generic
-
 dist: focal
+script:
+    - bash nproc
+    - bash free
+    - bash df -h
+    - sudo apt install neofetch -y
+    - neofetch
