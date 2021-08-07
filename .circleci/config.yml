@@ -16,6 +16,9 @@ jobs:
       - run: sudo /usr/sbin/update-ccache-symlinks
       - run: echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
       - run: source ~/.bashrc && echo $PATH
-      - run: cd Project
-      - run: . build/envsetup.sh
+      - run: cd project
+      - run: source build/envsetup.sh
+      - run: git clone https://github.com/Orangeskai/android_device_realme_RMX2001 -b DotOs --depth=1 device/realme/RMX2001
+      - run: git clone https://github.com/Orangeskai/android_kernel_realme_RMX2001 -b DotOs --depth=1 kernel/realme/RMX2001
+      - run: git clone https://github.com/Orangeskai/proprietary_vendor_realme -b DotOs --depth=1 vendor/realme
       - run: free
